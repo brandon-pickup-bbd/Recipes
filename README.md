@@ -19,7 +19,7 @@ For example, the API should be able to handle the following search requests:
 * git clone https://github.com/brandon-pickup-bbd/Recipes.git
 * cd Recipes
 * docker-compose up
-	* If you have trouble with this, try pulling the image and then retry the command: docker pull brandonpickupbbd/recipes-microservice-recipes:0.0.1-SNAPSHOT
+	* If you have trouble with this, try pulling the image and then retry the command: docker pull brandonpickupbbd/recipes-microservice-recipes:0.0.2-SNAPSHOT
 * Open the following URL: http://localhost:8080/recipes
 * It is also possible to interact with the API using the [Swagger UI](http://localhost:8080/swagger-ui/index.html#/) or with Postman using [this collection](https://github.com/brandon-pickup-bbd/Recipes/blob/main/RecipeApi.postman_collection.json) at the root of the repository (which has predefined requests, ready for you to use)
 
