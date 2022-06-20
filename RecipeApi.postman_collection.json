@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "872584dc-6603-41e1-909c-563f15dad979",
+		"name": "RecipeApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Recipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "isVegetarian",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "includesIngredient",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "excludesIngredient",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "instructionContains",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "Get all of the available recipes"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"My next recipe\",\r\n  \"preparationTime\": \"1 hour\",\r\n  \"peopleServed\": 4,\r\n  \"ingredients\": [\r\n    {\r\n      \"description\": \"Eggs\",\r\n      \"ingredientQuantity\": \"4\"\r\n    },\r\n    {\r\n      \"description\": \"Milk\",\r\n      \"ingredientQuantity\": \"900ml\"\r\n    }\r\n  ],\r\n  \"instructions\": \"Do this. And then do that\",\r\n  \"isVegetarian\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes"
+					]
+				},
+				"description": "Add a new recipe with ingredients"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Recipe by RecipeId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000"
+					]
+				},
+				"description": "Get a specific recipe by passing the recipe id in the path"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Recipe by RecipeId",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"My updated recipe\",\r\n  \"preparationTime\": \"2 hourw\",\r\n  \"peopleServed\": 4,\r\n  \"instructions\": \"Do this. And then do that. And then do this again\",\r\n  \"isVegetarian\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000"
+					]
+				},
+				"description": "Updating ingredients is not supported this way. Use the other api calls available to add/remove/update recipe ingredients"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Recipe by RecipeId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"1"
+					]
+				},
+				"description": "Deletes a recipe with the matching RecipeId"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Servings for Recipe ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000/servings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000",
+						"servings"
+					]
+				},
+				"description": "Get the number of people served for a specific recipe"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ingredients for a Recipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000/ingredients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000",
+						"ingredients"
+					]
+				},
+				"description": "Get the ingredients required for a particular recipe"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Ingredient to a Recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"An extra ingredient\",\r\n  \"ingredientQuantity\": \"A lot!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000/ingredients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000",
+						"ingredients"
+					]
+				},
+				"description": "Add an ingredient to a specific recipe"
+			},
+			"response": []
+		},
+		{
+			"name": "Update an Ingredient for a Recipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"description\": \"An extra-extra ingredient\",\r\n  \"ingredientQuantity\": \"A lot! x2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000/ingredients/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000",
+						"ingredients",
+						"4"
+					]
+				},
+				"description": "Update a specific ingredient for a recipe"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove an Ingredient from a Recipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/10000/ingredients/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"10000",
+						"ingredients",
+						"4"
+					]
+				},
+				"description": "Remove a specific ingredient from the recipe"
+			},
+			"response": []
+		}
+	]
+}
