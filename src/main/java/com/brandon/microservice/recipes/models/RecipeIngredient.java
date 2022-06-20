@@ -29,12 +29,11 @@ public class RecipeIngredient {
 	protected RecipeIngredient() {
 	}
 
-	public RecipeIngredient(Integer id, String description, String ingredientQuantity, Recipe recipe) {
+	public RecipeIngredient(Integer id, String description, String ingredientQuantity) {
 		super();
 		this.id = id;
 		this.description = description;
 		this.ingredientQuantity = ingredientQuantity;
-		this.recipe = recipe;
 	}
 
 	public Integer getId() {
