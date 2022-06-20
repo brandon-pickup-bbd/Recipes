@@ -66,7 +66,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>brandon/recipes-microservice-${project.artifactId}:${project.version}</name>
+						<name>brandonpickupbbd/recipes-microservice-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>
