@@ -196,8 +196,8 @@ class RecipeControllerTest {
 		when(recipeService.getRecipeIngredients(1)).thenReturn(recipes.get(0).getIngredients());
 
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/recipes/1/ingredients")).andDo(print())
-				.andExpect(status().isOk()).andExpect(MockMvcResultMatchers.jsonPath("$").exists()).andExpect(
-						MockMvcResultMatchers.jsonPath("$.length()").value(recipes.get(0).getIngredients().size()));
+				.andExpect(status().isOk()).andExpect(MockMvcResultMatchers.jsonPath("$").exists())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.length()").value(recipes.get(0).getIngredients().size()));
 
 	}
 
@@ -213,7 +213,8 @@ class RecipeControllerTest {
 	@Test
 	void testDeleteRecipeIngredient() throws Exception {
 
-		this.mockMvc.perform(MockMvcRequestBuilders.delete("/recipes/1/ingredients/1")).andExpect(status().isNoContent());
+		this.mockMvc.perform(MockMvcRequestBuilders.delete("/recipes/1/ingredients/1"))
+				.andExpect(status().isNoContent());
 	}
 
 	@Test
